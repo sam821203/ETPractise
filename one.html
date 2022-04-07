@@ -21,20 +21,47 @@
         margin: 200px auto;
       }
 
-      .outline {
+      .out-square {
+        position: relative;
+        width: 200px;
+        height: 200px;
         border: 1px dotted blue;
-        width: 150px;
-        height: 100px;
         margin: auto;
       }
 
-      .special-tri {
-        width: auto;
-        height: auto;
-        border-width: 0 50px 87px;
-        border-style: solid;
-        border-color: transparent transparent rosybrown;
-        /* margin: auto; */
+      .inner-square {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        height: 40%;
+        background-color: blue;
+        z-index: -2;
+      }
+
+      .l-squ {
+        position: absolute;
+        top: 2%;
+        left: 5%;
+        width: 25%;
+        height: 68%;
+        transform-origin: bottom right;
+        transform: rotate(30deg);
+        background-color: white;
+        z-index: -1;
+      }
+
+      .r-squ {
+        position: absolute;
+        top: 2%;
+        right: 5%;
+        width: 25%;
+        height: 68%;
+        transform-origin: bottom left;
+        transform: rotate(-30deg);
+        background-color: white;
+        z-index: -1;
       }
     </style>
   </head>
@@ -43,8 +70,10 @@
     <main>
       <div class="center">
         <div class="tri"></div>
-        <div class="outline">
-          <div class="special-tri"></div>
+        <div class="out-square">
+          <div class="inner-square"></div>
+          <div class="l-squ"></div>
+          <div class="r-squ"></div>
         </div>
       </div>
     </main>
