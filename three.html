@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+
+      .mycontainer {
+        width: 600px;
+        height: 100%;
+        box-sizing: border-box;
+        margin: auto;
+      }
+
+      .hall-wrap {
+        width: 600px;
+        height: 300px;
+        border: 2px solid black;
+        border-radius: 4px;
+        margin-bottom: 24px;
+        overflow: hidden;
+        transform: translateY(0);
+      }
+
+      .hall {
+        width: 2400px;
+        height: 300px;
+        display: flex;
+      }
+
+      .hall-block {
+        width: 600px;
+        height: 300px;
+      }
+
+      .hall-block.gray {
+        background-color: rgb(207, 207, 207);
+      }
+
+      .hall-block.red {
+        background-color: lightcoral;
+      }
+
+      .hall-block.green {
+        background-color: lightgreen;
+      }
+
+      .hall-block.blue {
+        background-color: lightblue;
+      }
+
+      .thumbtab {
+        justify-content: space-between;
+        width: 100%;
+        display: flex;
+      }
+
+      .thumb {
+        border-radius: 4px;
+        width: 175px;
+        height: 100px;
+        padding: 10px;
+      }
+
+      .first {
+        background-color: lightcoral;
+      }
+
+      .second {
+        background-color: lightgreen;
+      }
+
+      .third {
+        background-color: lightblue;
+      }
+
+      .thumb.first:hover {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .thumb.first:hover + #hall-id {
+        transform: translateX(-600px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mycontainer">
+      <div class="thumbtab">
+        <div class="thumb first">
+          red
+        </div>
+        <div class="hall-wrap" id="hall-id">
+            <div class="hall">
+              <div class="hall-block gray"></div>
+              <div class="hall-block red"></div>
+              <div class="hall-block green"></div>
+              <div class="hall-block blue"></div>
+            </div>
+          </div>
+        <div class="thumb second">green</div>
+        <div class="thumb third">blue</div>
+      </div>
+    </div>
+  </body>
+</html>
