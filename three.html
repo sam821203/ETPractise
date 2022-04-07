@@ -27,7 +27,7 @@
         transform: translateY(0);
       }
 
-      .hall {
+      #hall {
         width: 2400px;
         height: 300px;
         display: flex;
@@ -57,14 +57,16 @@
       .thumbtab {
         justify-content: space-between;
         width: 100%;
-        display: flex;
       }
 
       .thumb {
-        border-radius: 4px;
-        width: 175px;
-        height: 100px;
+        width: 125px;
+        height: 20px;
         padding: 10px;
+      }
+
+      .first, .second, .third {
+        display: inline-block;
       }
 
       .first {
@@ -79,32 +81,41 @@
         background-color: lightblue;
       }
 
-      .thumb.first:hover {
+      .thumb.first:hover,
+      .thumb.second:hover,
+      .thumb.third:hover {
         background-color: rgb(240, 240, 240);
-        color: black;
+        color: white;
       }
 
-      .thumb.first:hover + #hall-id {
+      .thumb.first:hover ~ .hall-wrap #hall {
         transform: translateX(-600px);
+      }
+
+      .thumb.second:hover ~ .hall-wrap #hall {
+        transform: translateX(-1200px);
+      }
+
+      .thumb.third:hover ~ .hall-wrap #hall {
+        transform: translateX(-1800px);
       }
     </style>
   </head>
   <body>
     <div class="mycontainer">
       <div class="thumbtab">
-        <div class="thumb first">
-          red
-        </div>
-        <div class="hall-wrap" id="hall-id">
-            <div class="hall">
-              <div class="hall-block gray"></div>
-              <div class="hall-block red"></div>
-              <div class="hall-block green"></div>
-              <div class="hall-block blue"></div>
-            </div>
-          </div>
+        <div class="thumb first">red</div>
         <div class="thumb second">green</div>
         <div class="thumb third">blue</div>
+
+        <div class="hall-wrap">
+          <div id="hall">
+            <div class="hall-block gray"></div>
+            <div class="hall-block red"></div>
+            <div class="hall-block green"></div>
+            <div class="hall-block blue"></div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
